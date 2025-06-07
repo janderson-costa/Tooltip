@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tooltip - Demo</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h2>Tooltip - Demo</h2>
+	<div class="buttons">
+		<button class="btn1">
+			Tooltip top
+		</button>
+		<button class="btn2">
+			Tooltip bottom
+		</button>
+		<button class="btn3">
+			Tooltip left
+		</button>
+		<button class="btn4">
+			Tooltip right
+		</button>
+	</div>
+</body>
+
+<script type="module">
+	import Tooltip from './Tooltip.js';
+
+	Tooltip(document.querySelector('.btn1'), {
+		position: 'top',
+		text: 'Dexto do Tooltip, Texto do <b>Tooltip</b> Texto do Tooltip, Texto do <b>Tooltip</b> Texto do Tooltip.',
+		maxWidth: 150,
+		offset: 8,
+	});
+
+	Tooltip(document.querySelector('.btn2'), {
+		position: 'bottom',
+		text: 'Dexto do Tooltip',
+		maxWidth: 150,
+	});
+
+	Tooltip(document.querySelector('.btn3'), {
+		position: 'left',
+		text: 'Texto do Tooltip',
+	});
+
+	Tooltip(document.querySelector('.btn4'), {
+		position: 'right',
+		text: 'Texto do Tooltip, Texto do <b>Tooltip</b> Texto do Tooltip, Texto do Tooltip Texto do Tooltip.',
+		maxWidth: 150,
+	});
+</script>
+
+<style>
+	* {
+		font-family: sans-serif;
+	}
+
+	body {
+		display: block;
+		height: 100vh;
+		margin: 0;
+		padding: 24px;
+		box-sizing: border-box;
+	}
+
+	.buttons {
+		display: flex;
+		justify-content: center;
+		padding: 24px 0;
+	}
+
+	button {
+		font-weight: 500;
+		margin: 0 16px;
+		white-space: nowrap;
+		/* padding: 8px 16px;
+		border: 1px solid #bbb;
+		border-radius: 5px; */
+	}
+</style>
+
+</html>
